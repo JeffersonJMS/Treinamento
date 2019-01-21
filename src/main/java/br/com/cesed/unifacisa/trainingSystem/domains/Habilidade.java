@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Aluno {
+public class Habilidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,12 +17,10 @@ public class Aluno {
 
 	private String nome;
 
-	private long matricula;
-
-	private Integer periodo;
+	private Integer nivel;
 
 	@ManyToMany
-	private List<Habilidade> habilidades;
+	private List<Aluno> alunos;
 
 	public String getNome() {
 		return nome;
@@ -32,28 +30,12 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public long getMatricula() {
-		return matricula;
+	public Integer getNivel() {
+		return nivel;
 	}
 
-	public void setMatricula(long matricula) {
-		this.matricula = matricula;
-	}
-
-	public Integer getPeriodo() {
-		return periodo;
-	}
-
-	public void setPeriodo(Integer periodo) {
-		this.periodo = periodo;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setNivel(Integer nivel) {
+		this.nivel = nivel;
 	}
 
 }
