@@ -18,30 +18,30 @@ import br.com.cesed.unifacisa.trainingSystem.domains.Habilidade;
 import br.com.cesed.unifacisa.trainingSystem.services.HabilidadeService;
 
 @Controller
-@RequestMapping("/habilidades")
+@RequestMapping("habilidades")
 public class HabilidadeController {
 
 	@Autowired
 	private HabilidadeService habilidadeService;
-
-	@GetMapping(path = "/{id}")
+	
+	@GetMapping(path = "{id}")
 	public ResponseEntity<Habilidade> readHabilidade(@PathVariable(name = "id") Long id) {
 		return new ResponseEntity<Habilidade>(habilidadeService.readHabilidade(id), HttpStatus.OK);
 	}
 
-	@PostMapping("/novo")
+	@PostMapping("novo")
 	public ResponseEntity<Habilidade> createHabilidade(@RequestBody Habilidade habilidade) {
 		habilidadeService.createHabilidade(habilidade);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
-	@PutMapping("/atualizacao")
+	@PutMapping("atualizacao")
 	public ResponseEntity<Habilidade> updatehablidade(@RequestBody Habilidade habilidade) {
 		habilidadeService.updateHabilidade(habilidade);
 		return new ResponseEntity<Habilidade>(HttpStatus.OK);
 	}
 
-	@GetMapping("/todas")
+	@GetMapping("todas")
 	public ResponseEntity<List<Habilidade>> readAll() {
 		return new ResponseEntity<List<Habilidade>>(habilidadeService.readAll(), HttpStatus.OK);
 	}

@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -15,14 +16,17 @@ public class Projeto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "projeto_id")
 	private Long id;
 	
+	@Column(name = "projeto_descricao", nullable = false, unique = true)
 	private String descricao;
 
-	@Column(unique = true, length = 150)
+	@Column(name = "projeto_nome" ,unique = true, length = 150)
 	private String nome;
 
 	@OneToMany
+	@JoinColumn(name = "projeto_id")
 	private List<Aluno> equipe = new ArrayList<Aluno>();
 
 	public String getDescricao() {

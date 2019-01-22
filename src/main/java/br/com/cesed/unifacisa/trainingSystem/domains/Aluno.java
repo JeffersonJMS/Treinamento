@@ -2,6 +2,7 @@ package br.com.cesed.unifacisa.trainingSystem.domains;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +16,11 @@ public class Aluno {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	private String cpf;
+	
 	private String nome;
 
+	@Column(unique = true)
 	private long matricula;
 
 	private Integer periodo;
@@ -55,5 +59,19 @@ public class Aluno {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getCpf() {
+		return cpf;
+	}
 
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public List<Habilidade> getHabilidades() {
+		return habilidades;
+	}
+
+	public void setHabilidades(List<Habilidade> habilidades) {
+		this.habilidades = habilidades;
+	}
 }
