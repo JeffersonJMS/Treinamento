@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.cesed.unifacisa.trainingSystem.domains.Aluno;
+import br.com.cesed.unifacisa.trainingSystem.dtos.CadastrarAluno;
 import br.com.cesed.unifacisa.trainingSystem.services.AlunoService;
 
 @Controller
@@ -19,7 +20,7 @@ public class AlunoController {
 	private AlunoService alunoService;
 	
 	@PostMapping("novo")
-	public ResponseEntity<Aluno> createALuno(@RequestBody Aluno aluno){
+	public ResponseEntity<Aluno> createALuno(@RequestBody CadastrarAluno aluno){
 		
 		try {
 			alunoService.createAluno(aluno);
