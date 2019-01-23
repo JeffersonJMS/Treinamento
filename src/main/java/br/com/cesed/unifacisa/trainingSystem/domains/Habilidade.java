@@ -23,9 +23,6 @@ public class Habilidade {
 	@Column(name = "habilidade_nivel", nullable = false, length = 2)
 	private Integer nivel;
 
-	@ManyToMany
-	private List<Aluno> alunos;
-
 	public String getNome() {
 		return nome;
 	}
@@ -50,11 +47,4 @@ public class Habilidade {
 		this.id = id;
 	}
 
-	public List<Aluno> getAlunos() {
-		return alunos;
-	}
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
-	}
 }

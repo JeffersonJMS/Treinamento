@@ -1,6 +1,7 @@
 package br.com.cesed.unifacisa.trainingSystem.dtos;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class CadastrarAluno implements Serializable {
 
@@ -11,6 +12,8 @@ public class CadastrarAluno implements Serializable {
 	private String cpf;
 	
 	private Integer Periodo;
+	
+	private List<Long> habilidades;
 
 	public String getNome() {
 		return nome;
@@ -35,4 +38,13 @@ public class CadastrarAluno implements Serializable {
 	public void setPeriodo(Integer periodo) {
 		Periodo = periodo;
 	}
+
+	public List<Long> getHabilidades() {
+		return habilidades;
+	}
+
+	public void setHabilidades(List<Long> habilidades) {
+		this.habilidades = habilidades;
+	}
+	
 }

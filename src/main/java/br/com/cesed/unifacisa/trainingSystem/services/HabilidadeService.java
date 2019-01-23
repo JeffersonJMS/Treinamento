@@ -38,5 +38,9 @@ public class HabilidadeService {
 	public List<Habilidade> findByNivel(Integer nivel){
 		return habilidadeRepository.findByNivel(nivel);
 	}
+
+	public List<Habilidade> findHabilidades(List<Long> ids) {
+		return habilidadeRepository.findAllById(ids);
+	}
 	
 }
