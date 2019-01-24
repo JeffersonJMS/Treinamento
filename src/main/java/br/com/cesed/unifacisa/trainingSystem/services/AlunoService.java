@@ -34,8 +34,6 @@ public class AlunoService {
 		aluno.setPeriodo(cadastrarAluno.getPeriodo());
 		aluno.setMatricula(generateMatricula());
 		
-		aluno.getHabilidades().addAll(habilidadeService.findHabilidades(cadastrarAluno.getHabilidades()));
-
 		alunoRepository.save(aluno);
 	}
 
@@ -52,11 +50,19 @@ public class AlunoService {
 		}
 		
 		return alunos;
-		
-		
-
 	}
 
+	public List<Aluno> findAll(){
+		return alunoRepository.findAll();
+	}
+	
+	public Aluno findByNomeAndPeriodo(String nome, Integer periodo) {
+		
+		Aluno aluno = alunoRepository.findByNome(nome);
+		
+		return aluno;
+	}
+	
 	private long generateMatricula() {
 		return new Date().getTime();
 	}
