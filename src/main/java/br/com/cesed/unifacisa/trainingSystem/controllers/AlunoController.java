@@ -2,8 +2,6 @@ package br.com.cesed.unifacisa.trainingSystem.controllers;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +37,8 @@ public class AlunoController {
 	}
 	
 	@GetMapping("periodo")
-	public ResponseEntity<Aluno> findByNomeAndPeriodo(@RequestParam String nome,@RequestParam Integer periodo){
-		return new ResponseEntity<Aluno>(alunoService.findByNomeAndPeriodo(nome, periodo), HttpStatus.OK);
+	public ResponseEntity<Aluno> findByNomeAndPeriodo(@RequestParam String nome){
+		return new ResponseEntity<Aluno>(alunoService.findByNomeAndPeriodo(nome), HttpStatus.OK);
 	}
 	
 }

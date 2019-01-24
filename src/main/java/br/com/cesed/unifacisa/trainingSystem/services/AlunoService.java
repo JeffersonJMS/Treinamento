@@ -56,7 +56,7 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 	
-	public Aluno findByNomeAndPeriodo(String nome, Integer periodo) {
+	public Aluno findByNomeAndPeriodo(String nome) {
 		
 		Aluno aluno = alunoRepository.findByNome(nome);
 		
